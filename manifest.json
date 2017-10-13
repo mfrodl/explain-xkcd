@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "Explain xkcd",
+  "short_name": "Explain xkcd",
+  "description": "It's 'cause you're dumb",
+  "version": "0.1.0",
+  "author": "Martin Frodl",
+  "browser_action": {
+    "default_icon": "icon16.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["jquery-3.2.1.min.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "webNavigation"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
