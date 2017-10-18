@@ -1,4 +1,9 @@
 $(function() {
+  $('body').on('click', 'a', function(){
+    chrome.tabs.create({url: $(this).attr('href')});
+    return false;
+  });
+
   if (chrome.tabs === undefined) {
     return;
   }
@@ -14,7 +19,15 @@ $(function() {
       url: explainURL,
       context: document.body,
       success: function(response) {
-        $('#explanation').html($(response).find('h2 ~ p'));
+        // Comic heading
+        $('#explanation').html($(response).find('h1#firstHeading'));
+        // Link to original explanation
+        $('#explanation').append(
+          '<a href="' + explainURL + '" class="explain-link" ' +
+          'title="Show original explanation"></a>'
+        );
+        // Explanation text
+        $('#explanation').append($(response).find('h2 ~ p'));
       },
       error: function() {
         $('#explanation').html('Something went wrong');
