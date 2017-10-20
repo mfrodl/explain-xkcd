@@ -27,7 +27,13 @@ $(function() {
           'title="Show original explanation"></a>'
         );
         // Explanation text
-        $('#explanation').append($(response).find('h2 ~ p'));
+        for (let element of $(response).find('h2 ~ *')) {
+          // Copy explanation until the next heading
+          if (element.tagName == 'H2') {
+            break;
+          }
+          $('#explanation').append('<p>' + element.textContent + '</p>');
+        }
       },
       error: function() {
         $('#explanation').html('Something went wrong');
