@@ -1,7 +1,8 @@
 function setPopup(tabId, url) {
   var url = new URL(url);
-  var popup = (url.hostname == 'xkcd.com' ? 'popup.html' : '');
-  chrome.browserAction.setPopup({popup: popup, tabId: tabId});
+  if (url.hostname == 'xkcd.com') {
+    chrome.pageAction.show(tabId);
+  }
 }
 
 chrome.tabs.onActivated.addListener(function(activeInfo) {
