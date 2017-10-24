@@ -3,7 +3,7 @@
   "name": "Explain xkcd",
   "short_name": "Explain xkcd",
   "description": "It's 'cause you're dumb",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "Martin Frodl",
   "page_action": {
     "default_icon": "icon16.png",

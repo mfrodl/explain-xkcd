@@ -1,6 +1,5 @@
 function setPopup(tabId, url) {
-  var url = new URL(url);
-  if (url.hostname == 'xkcd.com') {
+  if (/^https:\/\/xkcd.com\/([0-9]+\/)?$/.test(url)) {
     chrome.pageAction.show(tabId);
   }
 }
