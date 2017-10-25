@@ -12,7 +12,7 @@ $(function() {
     var url = new URL(tabs[0].url);
     var explainURL = 'https://explainxkcd.com' + url.pathname;
 
-    $('#explanation').html('<img src="loading.gif">');
+    $('#explanation').html('<img src="images/loading.gif">');
     $('#explanation').css({width: '441px'});
 
     $.ajax({

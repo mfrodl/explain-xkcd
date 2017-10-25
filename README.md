@@ -4,7 +4,7 @@ Google Chrome extension providing dumbed down explanations for [xkcd](https://xk
 Screenshot
 ----------
 
-![Screenshot](screenshot.png)
+![Screenshot](images/screenshot.png)
 
 Author
 ------
