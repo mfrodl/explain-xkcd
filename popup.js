@@ -22,18 +22,25 @@ $(function() {
         success: function(response) {
           // Comic heading
           $('#explanation').html($(response).find('h1#firstHeading'));
+
           // Link to original explanation
           $('#explanation').append(
             '<a href="' + explainURL + '" class="explain-link" ' +
             'title="Show original explanation"></a>'
           );
+
           // Explanation text
           for (let element of $(response).find('h2 ~ *')) {
             // Copy explanation until the next heading
             if (element.tagName == 'H2') {
               break;
             }
-            $('#explanation').append('<p>' + element.textContent + '</p>');
+
+            // Remove all links from element
+            $('a', element).contents().unwrap();
+
+            // Append result to explanation
+            $('#explanation').append(element);
           }
         },
         error: function() {
