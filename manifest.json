@@ -3,7 +3,7 @@
   "name": "Explain xkcd",
   "short_name": "Explain xkcd",
   "description": "It's 'cause you're dumb",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Martin Frodl",
   "page_action": {
     "default_icon": "images/icon16.png",
@@ -11,8 +11,8 @@
   },
   "content_scripts": [
     {
-      "js": ["jquery-3.2.1.min.js"],
-      "matches": ["<all_urls>"]
+      "js": ["jquery-3.2.1.min.js", "content.js"],
+      "matches": ["*://xkcd.com/*", "*://explainxkcd.com/*"]
     }
   ],
   "background": {
